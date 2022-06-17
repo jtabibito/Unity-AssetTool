@@ -168,14 +168,12 @@ namespace AssetTool
 
         private void OnDependenciesFindItem(string assetPath)
         {
-            // var item = FindItemByAssetPath(rootItem, assetPath);
-            // if (item != null)
-            // {
-            //     SetSelection(new List<int>() { item.id }, TreeViewSelectionOptions.RevealAndFrame);
-            //     Repaint();
-            // }
-            AssetReferenceSearchingWindow.CheckObject<AssetReferenceSearchingWindow>(AssetDatabase.LoadAssetAtPath(assetPath, typeof(UnityEngine.Object)));
-            Repaint();
+            var item = FindItemByAssetPath(rootItem, assetPath);
+            if (item != null)
+            {
+                SetSelection(new List<int>() { item.id }, TreeViewSelectionOptions.RevealAndFrame);
+                Repaint();
+            }
         }
     }
 }

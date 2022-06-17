@@ -84,6 +84,7 @@ namespace AssetTool
             var item = userdata as AssetTreeViewItem<AssetTreeModel.AssetInfo>;
             if (item != null)
             {
+                AssetBaseWindow.CheckObject<AssetReferenceSearchingWindow>(AssetDatabase.LoadAssetAtPath(item.data.fileRelativePath, typeof(UnityEngine.Object)));
                 if (AssetToolHandler.onDependenciesFindItem != null)
                 {
                     AssetToolHandler.onDependenciesFindItem(item.data.fileRelativePath);
